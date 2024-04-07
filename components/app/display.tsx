@@ -9,6 +9,11 @@ function Display() {
   const [showList, setShowList] = React.useState<Array<(typeof shows)[number]>>(
     []
   );
+  const [showNotedPoints, setShowNotedPoints] = React.useState<boolean>(true);
+
+  const [notedPoints, setNotedPoints] = React.useState<Array<String>>([
+  
+  ]);
 
   const [status, setStatus] = React.useState<"show" | "confirm" | "ticket">(
     "show"
@@ -39,22 +44,11 @@ function Display() {
         setShowList(shows);
       } else if (
         message.type === MessageTypeEnum.FUNCTION_CALL &&
-        (message.functionCall.name === "confirmDetails" ||
-          message.functionCall.name === "bookTickets")
+        message.functionCall.name === "storeKeyPoints"
       ) {
-        const params = message.functionCall.parameters;
-
-        setConfirmDetails(params);
-        console.log("parameters", params);
-
-        const result = shows.find(
-          (show) => show.title.toLowerCase() == params.show.toLowerCase()
-        );
-        setSelectedShow(result ?? shows[0]);
-
-        setStatus(
-          message.functionCall.name === "confirmDetails" ? "confirm" : "ticket"
-        );
+        const memoryPoint = message.functionCall.parameters.memoryPoint;
+        console.log("memory to remember = ", memoryPoint);
+        setNotedPoints(notedPoints=>[...notedPoints, memoryPoint])
       }
     };
 
@@ -74,6 +68,15 @@ function Display() {
 
   return (
     <>
+      <h1 onClick={() => setShowNotedPoints(curr => !curr)} className="cursor-pointer font-bold text-center">Noted Points</h1>
+      {showNotedPoints && (
+        <div>
+          {notedPoints.map((point, index) => (
+            <p key={index}>{point}</p>
+          ))}
+        </div>
+      )}
+
       {showList.length > 0 && status == "show" ? (
         <ShowsComponent showList={showList} />
       ) : null}
