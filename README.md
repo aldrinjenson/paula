@@ -1,40 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Paula 🌟
 
-## Getting Started
+**A real-time AI companion with ultra-low latency voice interactions.**
 
-First, run the development server:
+Paula is a virtual companion designed to be a supportive, empathetic presence. She listens attentively, provides a caring emotional outlet, and gently guides users in a positive direction — all through natural voice conversation.
+
+> *"Most of what it says is common knowledge, but… it feels nice to have someone just listen to our worries and then try to help."*
+
+---
+
+## 🎬 Demo
+
+**Watch Paula in action:**
+
+[![Paula Demo](https://img.shields.io/badge/▶️_Watch_Demo-Twitter-1DA1F2?style=for-the-badge&logo=twitter)](https://x.com/aldrinjenson/status/1773643579140760053)
+
+👉 **[See the full demo on Twitter/X](https://x.com/aldrinjenson/status/1773643579140760053)**
+
+---
+
+## ✨ Features
+
+- **🎤 Real-time Voice Conversations** — Talk naturally with Paula using your microphone
+- **⚡ Ultra-low Latency** — Powered by [VAPI](https://vapi.ai/) for near-instant responses
+- **💬 Empathetic AI** — GPT-powered with a carefully crafted therapeutic persona
+- **🔊 Natural Voice** — ElevenLabs voice synthesis for human-like speech
+- **🧠 Memory System** — Paula remembers key points from your conversations
+- **📝 Live Transcription** — See what Paula hears and says in real-time
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| [Next.js 14](https://nextjs.org/) | React framework |
+| [VAPI](https://vapi.ai/) | Real-time voice AI infrastructure |
+| [OpenAI GPT-3.5](https://openai.com/) | Language model |
+| [ElevenLabs](https://elevenlabs.io/) | Voice synthesis |
+| [Tailwind CSS](https://tailwindcss.com/) | Styling |
+
+---
+
+## 🚀 Quick Start
 
 ```bash
+# Clone the repo
+git clone https://github.com/aldrinjenson/paula.git
+cd paula
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp example.env .env.local
+# Add your VAPI token to .env.local
+
+# Run the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) and start talking to Paula!
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 📁 Project Structure
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+paula/
+├── assistants/       # AI assistant configuration & personality
+├── components/       # React components
+├── config/           # Environment configuration
+├── hooks/            # Custom React hooks (useVapi)
+├── lib/              # Utilities & SDK setup
+├── pages/            # Next.js pages & API routes
+└── styles/           # Global styles
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## 📝 License
 
-To learn more about Next.js, take a look at the following resources:
+MIT License - see [LICENSE](LICENSE) for details.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 👤 Author
 
-## Deploy on Vercel
+**Aldrin Jenson** — [@aldrinjenson](https://twitter.com/aldrinjenson)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[GitHub](https://github.com/aldrinjenson) • [Twitter](https://twitter.com/aldrinjenson) • [LinkedIn](https://linkedin.com/in/aldrinjenson)
